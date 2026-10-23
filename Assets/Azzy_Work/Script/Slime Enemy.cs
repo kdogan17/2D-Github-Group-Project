@@ -10,11 +10,7 @@ public class SlimeFollow : MonoBehaviour
 
     Rigidbody2D body;
 
-    //[SerializeField] private SlimeSpawn spawnScript;
-
-
-
-    public GameObject spawner = GameObject.FindWithTag("Spawner"); //made this public. wrong spot?
+    public GameObject spawner = GameObject.FindWithTag("Spawner"); 
 
 
 
@@ -22,6 +18,8 @@ public class SlimeFollow : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+
+        gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -38,23 +36,16 @@ public class SlimeFollow : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Square")) //change to sword name
         {
-            //spawnScript.waveNum -= 1;
-            //Debug.Log(spawnScript.waveNum);
-
-            /*Debug.Log("touch player");
-
-            SlimeSpawn tempSpawn;
-            tempSpawn = collision.gameObject.GetComponent<SlimeSpawn>();
-            tempSpawn.waveNum -= 1;
-            */
-
-
             SlimeSpawn spawnRef = spawner.GetComponentInChildren<SlimeSpawn>();
             spawnRef.decreaseNum();
 
 
             //this works
-            Destroy(gameObject);
+            //Destroy(gameObject);
+
+            //testing disabling
+            //ok so this also works we just gotta re-enable it on spawn
+            gameObject.SetActive(false);
         }
     }
 }

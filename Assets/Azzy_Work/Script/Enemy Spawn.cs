@@ -3,56 +3,65 @@ using UnityEngine;
 public class SlimeSpawn : MonoBehaviour
 {
     public bool wave1Start = true;
-    public bool wave2Start = false;
-    public bool wave3Start = false;
+    public bool wave2Start = true; //ok these are poorly named but they become false once the wave is spawned
+    public bool wave3Start = true; //also they are so broken for some reason idek
 
     public GameObject enemyPrefab;
 
-    public int randomX = Random.Range(0, 50);
-    public int randomY = Random.Range(0, 50);
+    public int randomX = Random.Range(0, 10); //can definitely change these values
+    public int randomY = Random.Range(0, 10);
 
     public int waveNum; //start game with 20 enemies (wave 1)
 
-    //[SerializeField] private SlimeFollow enemyScript;
-
-    //THIS IS A TEST
-    //public GameObject AngySlime; // drag and drop the object in the inspector.
-    //SlimeFollow script;
-
-    //script = AngySlime.GetComponent<SlimeFollow>(); //ok so this is broken but let's try get component
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Vector3 randomizePosition = new Vector3(Random.Range(0, 100), 0, Random.Range(0, 100));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (wave1Start) //add more waves
+        if (wave1Start) 
         {
             waveNum = 20;
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 19; i++)
             {
-                //Instantiate(enemyPrefab);
                 SpawnEnemy();
             }
             wave1Start = false;
         }
-
-
-
+        else if (waveNum == 0 && !wave1Start && !wave2Start)
+        {
+            Debug.Log("wave 2 start");
+            waveNum = 30;
+            for (int i = 0; i < 30; i++)
+            {
+                SpawnEnemy();
+            }
+            wave2Start = true;
+        }
+        else if (waveNum == 0 && wave2Start)
+        {
+            Debug.Log("wave 3 start");
+            waveNum = 50;
+            for (int i = 0; i < 50; i++)
+            {
+                SpawnEnemy();
+            }
+            wave3Start = false;
+        }
     }
 
     public void SpawnEnemy()
     {
         Vector3 randomizePosition = new Vector3(Random.Range(0, 50), Random.Range(0, 50), 0);
-        Quaternion Rotation = Quaternion.Euler(0, 0, 0); //unsure if i need this? ints don't work
+        Quaternion Rotation = Quaternion.Euler(0, 0, 0);
         Instantiate(enemyPrefab,randomizePosition, Rotation);
+        //enable the thing just instantiated
+        enemyPrefab.SetActive(true);
     }
 
-    //making a decrease wavenum script. hopefully this works
     public void decreaseNum()
     {
         waveNum -= 1;
