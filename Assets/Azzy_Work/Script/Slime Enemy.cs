@@ -38,13 +38,6 @@ public class SlimeFollow : MonoBehaviour
         {
             SlimeSpawn spawnRef = spawner.GetComponentInChildren<SlimeSpawn>();
             spawnRef.decreaseNum();
-
-
-            //this works
-            //Destroy(gameObject);
-
-            //testing disabling
-            //ok so this also works we just gotta re-enable it on spawn
             gameObject.SetActive(false);
         }
     }
