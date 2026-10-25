@@ -224,7 +224,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fc44ab9a0c65141bcd8479212c365c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::swingWeapon
-  speed: 10
+  swing:
+    m_Name: Swing
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f41a8faa-e225-43ea-88ae-5e2fff1e2e8c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4c67bc2d-4948-4abd-9261-cc4bcfbfd5df
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Swing
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  speed: 500
+  pivotPoint: {fileID: 1185922440}
 --- !u!1 &1185922438
 GameObject:
   m_ObjectHideFlags: 0
