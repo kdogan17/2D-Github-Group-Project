@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -12,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - weapon
+  - enemy
+  - wall
+  - player
   - 
   - 
   - 
@@ -41,6 +42,21 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 266704771
+    locked: 0
+  - name: Walls
+    uniqueID: 332182801
+    locked: 0
+  - name: BackgroundDecorations
+    uniqueID: 2076085801
+    locked: 0
+  - name: Player/Enemy
+    uniqueID: 3693770285
+    locked: 0
+  - name: ForegroundDecorations
+    uniqueID: 4224286429
     locked: 0
   m_RenderingLayers:
   - Default
