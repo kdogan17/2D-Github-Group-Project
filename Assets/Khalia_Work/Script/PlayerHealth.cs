@@ -38,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         // Wait for immunity before registering next hit
         if (Time.time < currentTimer) return;
 
+
         currentTimer = Time.time + hitCooldown;
 
         // Does damage and kills player if dead
@@ -46,6 +47,8 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Current health: " + currentHealth);
         if (currentHealth <= 0)
         {
+            FindAnyObjectByType<SoundsManager>().PlaySong("1_dying");
+            FindAnyObjectByType<GameManager>().LoseGame(); //searches scene for LoseGame()
             Destroy(gameObject);
         }
     }

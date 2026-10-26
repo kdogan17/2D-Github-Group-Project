@@ -31,6 +31,7 @@ public class BossEnemy : MonoBehaviour
 
         if (bossHealth == 0) //for some reason it kills him with one health left but. whatever. can work around this
         {
+            FindAnyObjectByType<GameManager>().WinGame(); //searches scene for WinGame()
             Destroy(gameObject);
             //this is the win condition, add win UI
         }

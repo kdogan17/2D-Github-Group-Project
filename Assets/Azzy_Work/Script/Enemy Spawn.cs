@@ -104,6 +104,7 @@ public class SlimeSpawn : MonoBehaviour
     public void decreaseNum()
     {
         waveNum -= 1;
+        FindAnyObjectByType<HealthPotion>().AddPotion(); //added when next wave add one potion
         Debug.Log(waveNum);
     }
 }
