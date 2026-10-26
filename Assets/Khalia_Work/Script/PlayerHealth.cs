@@ -46,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Current health: " + currentHealth);
         if (currentHealth <= 0)
         {
+            FindAnyObjectByType<GameManager>().LoseGame(); //searches scene for LoseGame()
             Destroy(gameObject);
         }
     }
