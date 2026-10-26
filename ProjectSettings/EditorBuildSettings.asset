@@ -15,4 +15,5 @@ EditorBuildSettings:
     path: Assets/Azzy_Work/Win_UI.unity
     guid: debcd559920079e4f97415d733e6b77e
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 6112a8d85fee70143b2b5aa56f480e1f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
