@@ -38,7 +38,8 @@ public class HealthPotion : MonoBehaviour
     potions++;
     }
 }
-if (currentHealth < 0)
+if (currentHealth == 0)
 {
    PlaySong("1_dying");
+}
 }
