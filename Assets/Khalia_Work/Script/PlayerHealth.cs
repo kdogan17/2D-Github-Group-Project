@@ -25,4 +25,13 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void Heal(float num)
+    {
+        currentHealth += num;
+        if (currentHealth >= 100)
+        {
+            currentHealth = 100;
+        }
+    }
 }
