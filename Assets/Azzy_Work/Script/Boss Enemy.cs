@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class BossEnemy : MonoBehaviour
             FindAnyObjectByType<GameManager>().WinGame(); //searches scene for WinGame()
             Destroy(gameObject);
             //this is the win condition, add win UI
+            SceneManager.LoadScene("Win_UI");
         }
     }
 
