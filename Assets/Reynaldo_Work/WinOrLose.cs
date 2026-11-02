@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        if (EndGame == false) return;
+        if (EndGame) return;
 
         EndGame = true;
         SceneManager.LoadScene("Win_UI");
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public void LoseGame()
     {
-        if (EndGame == false) return;
+        if (EndGame) return;
 
         EndGame = true;
         SceneManager.LoadScene("Lose_UI");
