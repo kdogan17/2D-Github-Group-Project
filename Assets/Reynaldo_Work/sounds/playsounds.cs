@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SoundsManager : MonoBehaviour
 {
+    public AudioSource musicSource; //background & theme music
+    public AudioSource SfxSource; //sound effects
+
     void Start()
     {
         PlaySceneMusic(SceneManager.GetActiveScene().name);
@@ -16,7 +19,27 @@ public class SoundsManager : MonoBehaviour
     public void PlaySong(string songName)
     {
        AudioClip sounds = Resources.Load<AudioClip>(songName);
+       
+       if (sounds != null) {
+        musicSource.clip = sounds;
+        musicSource.Play();
+        }
+        else
+        {
+        Debug.Log("Sound not found: " + songName);
+        }
     }
+
+     public void PlaySound(string soundName)
+    {
+        AudioClip sounds = Resources.Load<AudioClip>(soundName);
+
+        if (sounds != null)
+        {
+            SfxSource.PlayOneShot(sounds); //plays once so no overlap
+        }
+    }
+
     void PlaySceneMusic(string sceneName)
     {
         switch (sceneName)
