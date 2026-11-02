@@ -420,9 +420,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "In Chef Simulator, you play as a chef making his way through a dungeon.
-    \n\nUse A, S, W, D keys to move Left, Down, Up, and Right  \n\nUse the E key
-    to attack slimes and the final boss \n\nKill all of the slimes and final boss
-    to win! Avoid taking damage, you lose when you run out of HP. \n"
+    \n\nUse A, S, W, D keys to move Left, Down, Up, and Right  \n\nUse the J key
+    to attack slimes and the final boss \n\nUse numkeys to change weapon skin\n\nKill
+    all of the slimes and final boss to win! Avoid taking damage, you lose when you
+    run out of HP. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.1
+  m_fontSize: 21.6
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
