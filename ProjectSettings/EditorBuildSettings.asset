@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MasterScene/TitleScreen.unity
     guid: a74d0944f988af746b4a196c67d60afd
+  - enabled: 1
+    path: Assets/Azzy_Work/Lose_UI.unity
+    guid: 063972f4f4ad80145a9ee4d67a170f8a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6112a8d85fee70143b2b5aa56f480e1f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
