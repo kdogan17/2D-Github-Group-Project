@@ -47,8 +47,7 @@ public class PlayerHealth : MonoBehaviour
         currentTimer = Time.time + hitCooldown;
 
         // Does damage and kills player if dead
-        float tempHealth = currentHealth;
-        if (tempHealth - num >= 0) currentHealth -= num;
+        currentHealth -= num;
         UpdateHealthDisplay();
 
         Debug.Log("You took damage.");
