@@ -1,0 +1,36 @@
+{
+    "version": 1,
+    "name": "healthpot",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "82da638c-4906-46c5-9255-0d3f6f8c2201",
+            "actions": [
+                {
+                    "name": "Heal",
+                    "type": "Button",
+                    "id": "6a8f5d68-36d0-4a82-ba79-faeff7eec52a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "usePot",
+                    "id": "bf622a6b-cc8b-4752-a774-a4c6ac27680b",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
