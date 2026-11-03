@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using JetBrains.Annotations;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -6,32 +8,61 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     Animator animator;
 
+    public TextMeshProUGUI healthText;
+
+    // Sets timer for immunity
+    public float hitCooldown = 0.5f;
+    public float currentTimer = 0f;
+
     void Start()
     {
         currentHealth = health;
+        UpdateHealthDisplay();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            TakeDamage(1f);
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            TakeDamage(10f);
+        }
     }
 
     public void TakeDamage(float num)
     {
+        // Wait for immunity before registering next hit
+        if (Time.time < currentTimer) return;
+
+
+        currentTimer = Time.time + hitCooldown;
+
+        // Does damage and kills player if dead
         currentHealth -= num;
+        UpdateHealthDisplay();
+
+        Debug.Log("You took damage.");
+        Debug.Log("Current health: " + currentHealth);
         if (currentHealth <= 0)
         {
+            FindAnyObjectByType<SoundsManager>().PlaySong("1_dying");
+            FindAnyObjectByType<GameManager>().LoseGame(); //searches scene for LoseGame()
             Destroy(gameObject);
         }
     }
 
-    public void Heal(float num)
+    void UpdateHealthDisplay()
     {
-        currentHealth += num;
-        if (currentHealth >= 100)
-        {
-            currentHealth = 100;
-        }
+        if (healthText != null)
+            healthText.text = "Health: " + Mathf.CeilToInt(currentHealth);
     }
 }
