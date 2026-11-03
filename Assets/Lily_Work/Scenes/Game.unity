@@ -37052,9 +37052,47 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
+  moveLeft:
+    m_Name: Move Left
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 35052295-0ca9-4b47-9225-21c66e7cebb3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d1bfe27f-4211-430c-8339-50a865b4ed80
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Left
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  moveRight:
+    m_Name: Move Right
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 8d8a9c42-4597-472e-92be-8f9400820fe7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3a47b0b5-0f3f-4b47-afa0-fa97de7d7065
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Right
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
   speed: 500
   pivotPoint: {fileID: 1975025845}
   swinging: 0
+  movingRight: 1
+  movingLeft: 0
   degreesRotated: 0
 --- !u!212 &472990630
 SpriteRenderer:
@@ -44257,6 +44295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1128ae3e3b646439d68f57449b949e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundsManager
+  musicSource: {fileID: 0}
+  SfxSource: {fileID: 0}
 --- !u!114 &1454175619
 MonoBehaviour:
   m_ObjectHideFlags: 0
